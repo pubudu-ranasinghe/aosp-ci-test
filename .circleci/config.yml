@@ -13,6 +13,10 @@ jobs:
       TERM: dumb
     
     steps:
+
+      - restore_cache:
+          keys:
+            - android 
       - checkout
 
       - run: git config --global user.email "pubudutr@gmail.com" && git config --global user.name "Pubudu Ranasinghe"
@@ -35,13 +39,18 @@ jobs:
 
       - run: repo sync -c
 
+      - save_cache:
+          key: android
+          paths:
+            - "~/android/lineage"
+
       - run: cd ~/android/lineage
 
       - run: echo ./build/envsetup.sh
 
       - run: chmod +x ./build/envsetup.sh
 
-      - run: echo ./build/envsetup.sh >> $BASH_ENV
+      - run: ./build/envsetup.sh
 
       - run: breakfast wt88047
 
