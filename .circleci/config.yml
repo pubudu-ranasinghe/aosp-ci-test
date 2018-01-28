@@ -33,11 +33,11 @@ jobs:
 
       - run: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 
-      - run: repo sync
+      # - run: repo sync
 
       - run: cd ~/android/lineage
 
-      - run: source build/envsetup.sh
+      - run: echo source build/envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
 
