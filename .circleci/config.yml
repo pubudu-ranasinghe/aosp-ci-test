@@ -16,7 +16,8 @@ jobs:
 
       - restore_cache:
           keys:
-            - android2
+            - android3
+
       - checkout
 
       - run: git config --global user.email "pubudutr@gmail.com" && git config --global user.name "Pubudu Ranasinghe"
@@ -25,28 +26,22 @@ jobs:
 
       - run: mkdir -p ~/bin
 
-      - run: mkdir -p ~/android/lineage
-
       - run: curl https://storage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
       - run: chmod a+x ~/bin/repo
 
       - run: echo 'export PATH=~/bin:$PATH' >> $BASH_ENV
 
-      - run: cd ~/android/lineage
-
       - run: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 
       - run: repo sync -c
 
       - save_cache:
-          key: android2
+          key: android3
           paths:
-            - ~/android/lineage
-
-      - run: cd ~/android/lineage
+            - ~/aosp2go
 
       - run: chmod +x ./build.sh && ./build.sh
     
       - store_artifacts:
-          path: ~/android/lineage/$OUT
+          path: ~/aosp2go/$OUT
