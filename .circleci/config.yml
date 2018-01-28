@@ -42,7 +42,7 @@ jobs:
       - save_cache:
           key: android
           paths:
-            - "~/android/lineage"
+            - ~/android/lineage
 
       - run: cd ~/android/lineage
 
