@@ -39,6 +39,8 @@ jobs:
 
       - run: echo ./build/envsetup.sh
 
+      - run: chmod +x ./build/envsetup.sh
+
       - run: echo ./build/envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
