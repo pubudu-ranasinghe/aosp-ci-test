@@ -16,7 +16,7 @@ jobs:
 
       - restore_cache:
           keys:
-            - android 
+            - android2
       - checkout
 
       - run: git config --global user.email "pubudutr@gmail.com" && git config --global user.name "Pubudu Ranasinghe"
@@ -37,10 +37,10 @@ jobs:
 
       - run: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 
-      # - run: repo sync -c
+      - run: repo sync -c
 
       - save_cache:
-          key: android
+          key: android2
           paths:
             - ~/android/lineage
 
