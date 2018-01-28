@@ -25,7 +25,7 @@ jobs:
 
       - run: chmod a+x ~/bin/repo
 
-      - run: PATH=~/bin:$PATH
+      - run: export PATH=~/bin:$PATH
 
       - run: cd ~/android/lineage
 
