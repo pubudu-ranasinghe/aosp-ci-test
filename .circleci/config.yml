@@ -44,6 +44,3 @@ jobs:
       - run: brunch wt88047
 
       - run: cd $OUT && ls
-
-      - store_artifacts:
-        path: cd ~/android/lineage/$OUT
