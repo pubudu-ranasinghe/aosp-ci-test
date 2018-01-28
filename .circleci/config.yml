@@ -37,7 +37,9 @@ jobs:
 
       - run: cd ~/android/lineage
 
-      - run: echo source build/envsetup.sh >> $BASH_ENV
+      - run: curl -O https://raw.githubusercontent.com/aosp-mirror/platform_build/master/envsetup.sh
+
+      - source: ./envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
 
