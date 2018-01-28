@@ -39,7 +39,7 @@ jobs:
 
       - run: curl -O https://raw.githubusercontent.com/aosp-mirror/platform_build/master/envsetup.sh
 
-      - source: ./envsetup.sh >> $BASH_ENV
+      - run: echo ./envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
 
