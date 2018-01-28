@@ -37,7 +37,9 @@ jobs:
 
       - run: cd ~/android/lineage
 
-      - run: echo build/envsetup.sh >> $BASH_ENV
+      - run: echo ./build/envsetup.sh
+
+      - run: echo ./build/envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
 
