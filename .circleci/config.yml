@@ -25,6 +25,8 @@ jobs:
 
       - run: chmod a+x ~/bin/repo
 
+      - run: PATH=~/bin:$PATH
+
       - run: cd ~/android/lineage
 
       - run: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
