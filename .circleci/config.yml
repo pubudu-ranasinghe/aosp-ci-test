@@ -33,13 +33,11 @@ jobs:
 
       - run: repo init -u https://github.com/LineageOS/android.git -b cm-14.1
 
-      - run: repo sync
+      - run: repo sync -c
 
       - run: cd ~/android/lineage
 
-      - run: curl -O https://raw.githubusercontent.com/aosp-mirror/platform_build/master/envsetup.sh && chmod +x ./envsetup.sh
-
-      - run: echo ./envsetup.sh >> $BASH_ENV
+      - run: echo build/envsetup.sh >> $BASH_ENV
 
       - run: breakfast wt88047
 
